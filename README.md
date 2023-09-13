@@ -1,4 +1,3 @@
-- 👋 Hi, I’m @SteelWarrior123
 - 👀 I’m interested in Data Analytics and Data Science
 - 🌱 I’m currently learning Python, BI and Tableau
 - 💞️ I’m looking to collaborate on anyone who is interested in creating Data Analyst projects
