@@ -132,7 +132,7 @@ def generate_sentence():
 
 # Create the main application window
 root = tk.Tk()
-root.title("Rickter Scale ML")
+root.title("Richter Scale ML")
 root.geometry("600x300")
 instruction_label = tk.Label(root, text="Enter a value:")
 instruction_label.pack()
