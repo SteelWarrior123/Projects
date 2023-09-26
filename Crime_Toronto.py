@@ -64,14 +64,14 @@ df = pd.DataFrame(final_data)
 fig = px.scatter_mapbox(df, lon=df['Long'], lat=df['Lat'], zoom=10, color=df['Deaths'], hover_name="Neighbourhood", width=1200, height=900, title='Crime Data Map in Toronto (2004-2022)')
 fig.update_layout(mapbox_style="open-street-map")
 fig.update_traces(marker=dict(size=15))
-# fig.show()
-username = 'Manast'
-api_key = 'ruWTdLItjxKp2fg7dX8e'
-
-py.sign_in(username, api_key)
-chart_url = py.plot(fig, filename='crime_data_map_toronto', auto_open=False)
-
-print("Chart URL:", chart_url)
+fig.show()
+# username = 'Manast'
+# api_key = 'ruWTdLItjxKp2fg7dX8e'
+#
+# py.sign_in(username, api_key)
+# chart_url = py.plot(fig, filename='crime_data_map_toronto', auto_open=False)
+#
+# print("Chart URL:", chart_url)
 
 #Murders along a week
 DOW = data['DOW']
@@ -99,7 +99,7 @@ plt.figure(figsize=(10, 6))
 plt.bar(Days, D_Freq, color='lightblue', edgecolor='black')
 plt.xlabel('Day of the Week')
 plt.ylabel('Count')
-plt.title('Count of Homocide across the week (2004-2022)')
+plt.title("Homicide count in Toronto by Day of the Week (2004-2022)")
 plt.tight_layout()
 plt.grid(axis='y', alpha=0.75)
 plt.show()
@@ -126,7 +126,7 @@ for pair in sorted(YEAR_COUNT.items()):
 
 plt.figure(figsize=(10, 6))
 plt.plot(Years, Y_Freq, marker='o', linestyle='-')
-plt.title('Homocide in Toronto (2004-2022)')
+plt.title('Homicides in Toronto (2004-2022)')
 plt.xlabel('Years')
 plt.ylabel('Count')
 plt.xticks(Years, rotation=45)
@@ -161,8 +161,8 @@ fig, ax = plt.subplots(figsize=(10, 6))
 bottom_shooting = [0] * len(Years)
 bottom_stabbing = [s for s in shooting]
 bottom_other = [s + st for s, st in zip(shooting, stabbing)]
-ax.bar(Years, shooting, color='blue', edgecolor='black', label='Shooting', bottom=bottom_shooting)
-ax.bar(Years, stabbing, color='green', edgecolor='black', label='Stabbing', bottom=bottom_stabbing)
+ax.bar(Years, shooting, color='lightblue', edgecolor='black', label='Shooting', bottom=bottom_shooting)
+ax.bar(Years, stabbing, color='lightgreen', edgecolor='black', label='Stabbing', bottom=bottom_stabbing)
 ax.bar(Years, other, color='red', edgecolor='black', label='Other', bottom=bottom_other)
 for year, s, st, o in zip(Years, shooting, stabbing, other):
     ax.text(year, s/2, str(s), ha='center', va='center', fontsize=10)
@@ -170,12 +170,12 @@ for year, s, st, o in zip(Years, shooting, stabbing, other):
     ax.text(year, s + st + o/2, str(o), ha='center', va='center', fontsize=10)
 ax.set_xlabel('Years')
 ax.set_ylabel('Count')
-ax.set_title('Count of Homicides by Type (2004-2022)')
+ax.set_title("Homicide Classification and count in Toronto (2004-2022)")
 ax.set_xticks(Years)
 ax.set_xticklabels(Years, rotation=45)
 ax.legend()
 ax.grid(axis='y', alpha=0.75)
-plt.tight_layout()
+plt.tight_layout()  
 plt.show()
 
 #Histogram
@@ -188,7 +188,7 @@ for i in monthy:
 plt.bar(monthy, month_count, color='#e76f51', edgecolor='black')
 plt.xlabel('Months')
 plt.ylabel('Count')
-plt.title('Count of Homocide on average across a year')
+plt.title('Count of Homicides on average across a year in Toronto')
 plt.xticks(rotation=45)
 custom_y_ticks = [60, 70, 80, 90, 100, 110, 120, 130, 140, 150]
 plt.ylim(min(custom_y_ticks), max(custom_y_ticks))
